@@ -29,4 +29,4 @@ def run(session, from_table, to_table):
 $$;
 
 
-CALL create_partition_table('YOUR_DATABASE_NAME.YOUR_SCHEMA_NAME.orders', 'YOUR_DATABASE_NAME.YOUR_SCHEMA_NAME.orders_temp');
+CALL create_partition_table('YOUR_DATABASE_NAME.YOUR_SCHEMA_NAME.YOUR_TABLE_NAME', 'YOUR_DATABASE_NAME.YOUR_SCHEMA_NAME.YOUR_TEMP_TABLE_NAME');
