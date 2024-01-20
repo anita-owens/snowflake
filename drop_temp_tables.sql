@@ -10,8 +10,8 @@ AS
 $$
 
 def run(session, database_name, schema_name):
-    # List tables ending with 'TEMP' in the specified database and schema
-    query = f"SHOW TABLES LIKE '%TEMP' IN {database_name}.{schema_name}"
+    # List tables containing 'TEMP' in the specified database and schema
+    query = f"SHOW TABLES LIKE '%TEMP%' IN {database_name}.{schema_name}"
     temp_tables = session.sql(query).collect()
 
     # Drop each TEMP table
