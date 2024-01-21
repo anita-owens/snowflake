@@ -1,3 +1,4 @@
+#Step 3
 use schema YOUR_DATABASE_NAME.YOUR_SCHEMA_NAME;
 
 CREATE OR REPLACE PROCEDURE drop_temp_tables(database_name STRING, schema_name STRING)
@@ -10,7 +11,7 @@ AS
 $$
 
 def run(session, database_name, schema_name):
-    # List tables containing 'TEMP' in the specified database and schema
+    # List all tables 'TEMP' in the specified database and schema
     query = f"SHOW TABLES LIKE '%TEMP%' IN {database_name}.{schema_name}"
     temp_tables = session.sql(query).collect()
 
@@ -25,6 +26,5 @@ def run(session, database_name, schema_name):
     return "All TEMP tables dropped successfully."
 
 $$;
-
 
 CALL drop_temp_tables('YOUR_DATABASE_NAME', 'YOUR_SCHEMA_NAME');
