@@ -1,4 +1,6 @@
 #Step 1
+USE SCHEMA YOUR_DATABASE_NAME.YOUR_SCHEMA_NAME;
+
 CREATE OR REPLACE PROCEDURE add_partition_column(
     table_name STRING,
     new_partition_col_name STRING,

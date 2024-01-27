@@ -1,7 +1,7 @@
 #Step 2
-use schema YOUR_DATABASE_NAME.YOUR_SCHEMA_NAME;
+USE SCHEMA YOUR_DATABASE_NAME.YOUR_SCHEMA_NAME;
 
-CREATE OR REPLACE PROCEDURE copy_table_to_gcs(
+CREATE OR REPLACE PROCEDURE copy_table_to_gcs_csv(
     from_table STRING,
     storage_path STRING,
     partition_column STRING
@@ -28,7 +28,7 @@ def run(session, from_table, storage_path, partition_column):
 
 $$;
 
-CALL copy_table_to_gcs(
+CALL copy_table_to_gcs_csv(
     'YOUR_DATABASE_NAME.YOUR_SCHEMA_NAME.YOUR_TABLE_NAME',
     '@gcs.stages.sf_storage/your_subfolder_if_needed/',
     'YOUR_PARTITION_COLUMN_NAME'
